@@ -121,3 +121,6 @@ vendor.power.pasr.enabled=true
 # OnePlus sensors
 ro.sensor.pickup=oneplus.sensor.pickup
 ro.sensor.pocket=oneplus.sensor.op_motion_detect
+
+# PASR
+vendor.power.pasr.enabled=true
