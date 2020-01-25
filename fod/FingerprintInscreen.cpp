@@ -66,6 +66,8 @@ static T get(const std::string& path, const T& def) {
 FingerprintInscreen::FingerprintInscreen() {
     this->mVendorFpService = IVendorFingerprintExtensions::getService();
     this->mVendorDisplayService = IOneplusDisplay::getService();
+    std::string device = android::base::GetProperty("ro.product.device", "");
+    isOnePlus7 = device == "guacamoleb";
 }
 
 Return<void> FingerprintInscreen::onStartEnroll() {
