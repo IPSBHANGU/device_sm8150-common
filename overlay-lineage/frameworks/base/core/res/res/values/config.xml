@@ -16,11 +16,17 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The list absolute paths of jar/apk files containing the device specific handlers,
         delimited by File.pathSeparator, which defaults to ":" on Android  -->
-    <string name="config_deviceKeyHandlerLib" translatable="false">/system/product/priv-app/OnePlusParts/OnePlusParts.apk</string>
+    <string-array name="config_deviceKeyHandlerLib" translatable="false">
+        <item>/system/product/priv-app/OnePlusParts/OnePlusParts.apk</item>
+        <item>/system/priv-app/OnePlusCameraHelper/OnePlusCameraHelper.apk</item>
+    </string-array>
 
     <!-- Full qualified name of the class that implements
         com.android.internal.os.DeviceKeyHandler interface. -->
-    <string name="config_deviceKeyHandlerClass" translatable="false">com.one.device.KeyHandler</string>
+    <string-array name="config_deviceKeyHandlerClass" translatable="false">
+        <item>com.one.device.KeyHandler</item>
+        <item>com.one.camerahelper.KeyHandler</item>
+    </string-array>
 
     <!-- Hardware keys present on the device, stored as a bit field. -->
     <bool name="config_proxiSensorWakupCheck">true</bool>

@@ -26,8 +26,8 @@ import android.provider.Settings;
 import android.text.TextUtils;
 
 public class Startup extends BroadcastReceiver {
-    private static final boolean sIsOnePlus7pro = android.os.Build.DEVICE.equals("oneplus7pro");
-    private static final boolean sIsOnePlus7tpro = android.os.Build.DEVICE.equals("oneplus7tpro");
+    private static final boolean sIsOnePlus7pro = android.os.Build.DEVICE.equals("guacamole");
+    private static final boolean sIsOnePlus7tpro = android.os.Build.DEVICE.equals("hotdog");
 
     private static void restore(String file, boolean enabled) {
         if (file == null) {

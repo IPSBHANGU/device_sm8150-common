@@ -682,16 +682,6 @@ public class KeyHandler implements DeviceKeyHandler {
         return IStatusBarService.Stub.asInterface(ServiceManager.getService("statusbar"));
     }
 
-    @Override
-    public boolean getCustomProxiIsNear(SensorEvent event) {
-        return event.values[0] < event.sensor.getMaximumRange();
-    }
-
-    @Override
-    public String getCustomProxiSensor() {
-        return "android.sensor.proximity";
-    }
-
     private class ClientPackageNameObserver extends FileObserver {
 
         public ClientPackageNameObserver(String file) {
