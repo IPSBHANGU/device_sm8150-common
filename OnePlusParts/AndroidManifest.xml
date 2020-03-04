@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
     package="com.one.device"
     android:sharedUserId="android.uid.system" >
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -108,14 +107,6 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-        <service
-            android:name="com.one.device.FPSInfoService"
-            android:exported="false">
-        </service>
-        <service
-            android:name=".FPSTileService"
-            android:icon="@drawable/ic_launcher"
-            android:label="@string/fps_info_title"
                 <service
             android:name="com.one.device.RefreshRateTileService"
             android:icon="@drawable/ic_refresh_tile_60"
