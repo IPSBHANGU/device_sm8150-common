@@ -16,10 +16,10 @@
 #ifndef VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
 #define VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
 
-#include <vendor/lineage/camera/motor/1.0/ICameraMotor.h>
+#include <vendor/one/camera/motor/1.0/ICameraMotor.h>
 
 namespace vendor {
-namespace lineage {
+namespace one {
 namespace camera {
 namespace motor {
 namespace V1_0 {
@@ -41,7 +41,7 @@ class CameraMotor : public ICameraMotor {
 }  // namespace V1_0
 }  // namespace motor
 }  // namespace camera
-}  // namespace lineage
+}  // namespace one
 }  // namespace vendor
 
 #endif  // VENDOR_LINEAGE_CAMERA_MOTOR_V1_0_FINGERPRINTINSCREEN_H
