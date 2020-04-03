@@ -172,7 +172,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     libbluetooth_qti \
     libbtconfigstore \
-    liba2dpoffload \
     libbthost_if \
     libldacBT_dec \
     libbt-logClient.so \
