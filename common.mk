@@ -378,6 +378,13 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor
 
+# QTI
+TARGET_COMMON_QTI_COMPONENTS := \
+    av \
+    bt \
+    perf \
+    wfd
+
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
