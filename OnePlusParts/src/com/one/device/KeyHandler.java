@@ -100,6 +100,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int POCKET_MIN_DELTA_MS = 5000;
 
     private static final boolean sIsOnePlus7pro = android.os.Build.DEVICE.equals("guacamole");
+    private static final boolean sIsOnePlus7 = android.os.Build.DEVICE.equals("guacamoleb");
     private static final boolean sIsOnePlus7tpro = android.os.Build.DEVICE.equals("hotdog");
     private static final boolean sIsOnePlus7t = android.os.Build.DEVICE.equals("hotdogb");
 
@@ -332,7 +333,7 @@ public class KeyHandler implements DeviceKeyHandler {
             mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
             mClientObserver.startWatching();
         }
-        if (sIsOnePlus7t) {
+        if (sIsOnePlus7t || sIsOnePlus7) {
             initTriStateHallSensor();
         }
     }
