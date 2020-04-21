@@ -161,9 +161,13 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    libbluetooth_qti \
+    libbtconfigstore \
     liba2dpoffload \
     libbthost_if \
     libldacBT_dec \
+    libbt-logClient.so \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
 # Camera
