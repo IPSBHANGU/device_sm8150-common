@@ -2,6 +2,8 @@
 audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
 ro.audio.monitorRotation=true
+audio.dolby.ds2.enabled=true
+audio.dolby.ds2.hardbypass=true
 
 # Bluetooth
 bt.max.hfpclient.connections=1
