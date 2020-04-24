@@ -19,6 +19,7 @@
 
 #define LOG_TAG "sensors_multihal"
 #define LOG_NDEBUG 1
+#include <cutils/log.h>
 #include <android-base/properties.h>
 #include <cutils/atomic.h>
 #include <cutils/properties.h>
