@@ -10,6 +10,7 @@ BUILD_BROKEN_PHONY_TARGETS := true
 BOARD_VENDOR := oneplus
 
 VENDOR_PATH := device/oneplus/sm8150-common
+DEVICE_PATH := device/oneplus/sm8150-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -63,7 +64,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno640
 TARGET_USES_QCOM_BSP := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Treble
 PRODUCT_VENDOR_MOVE_ENABLED := true
