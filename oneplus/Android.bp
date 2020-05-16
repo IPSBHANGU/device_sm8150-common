@@ -1,9 +1,38 @@
 java_library {
     name: "oneplus-mock",
-    owner: "omni",
+    owner: "one",
     installable: true,
 
     srcs: [
         "src/*/*/*/*.java",
     ],
+}
+
+android_app_import {
+	name: "OPSoundTuner",
+	owner: "oneplus",
+	apk: "prebuilt/app/OPSoundTuner/OPSoundTuner.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+}
+
+android_app_import {
+	name: "daxService",
+	owner: "oneplus",
+	apk: "prebuilt/priv-app/daxService/daxService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	required: ["privapp_whitelist_com.dolby.daxservice"],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_com.dolby.daxservice",
+    sub_dir: "permissions",
+    src: "prebuilt/etc/permissions/com.dolby.daxservice.xml",
+    filename_from_src: true,
 }
