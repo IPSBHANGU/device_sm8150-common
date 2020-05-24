@@ -94,5 +94,7 @@
 	<!-- Whether device supports an alt. ambient display -->
 	<bool name="config_alt_ambient_display">true</bool>
 
+   <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/fastchg_status</string>
 
 </resources>
