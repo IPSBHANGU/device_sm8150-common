@@ -33,12 +33,6 @@
 #define OP_DISPLAY_NOTIFY_PRESS 9
 #define OP_DISPLAY_SET_DIM 10
 
-// This is not a typo by me. It's by OnePlus.
-#define HBM_ENABLE_PATH "/sys/class/drm/card0-DSI-1/op_friginer_print_hbm"
-#define HBM_MODE_PATH "/sys/class/drm/card0-DSI-1/hbm"
-#define DIM_AMOUNT_PATH "/sys/class/drm/card0-DSI-1/fod_dim_alpha"
-#define HBM_PATH "/sys/class/drm/card0-DSI-1/hbm"
-
 namespace vendor {
 namespace one {
 namespace biometrics {
@@ -85,9 +79,9 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 }
 
 Return<void> FingerprintInscreen::onPress() {
-    this->mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 2);
-    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
-    set(HBM_ENABLE_PATH, 1);
+    if (mIsEnrolling) {
+        this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 1);
+    }
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 1);
 
     return Void();
@@ -146,7 +140,18 @@ Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t v
 }
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
-    return error == FINGERPRINT_ERROR_VENDOR && vendorCode == 6;
+    switch (error) {
+        case FINGERPRINT_ERROR_CANCELED:
+            if (vendorCode == 0) {
+                this->mIsEnrolling = false;
+            }
+            return false;
+        case FINGERPRINT_ERROR_VENDOR:
+            // Ignore vendorCode 6
+            return vendorCode == 6;
+        default:
+            return false;
+    }
 }
 
 Return<void> FingerprintInscreen::setLongPressEnabled(bool enabled) {
