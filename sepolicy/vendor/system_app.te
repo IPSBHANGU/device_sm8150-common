@@ -1,0 +1,11 @@
+# allow system_app to interact with pasr hal
+hal_client_domain(system_app, hal_pasrmanager)
+
+allow system_app proc_touchpanel:dir search;
+allow system_app proc_touchpanel:file { getattr open write };
+allow system_app sysfs_usb_supply:dir search;
+
+allow system_app system_data_file:dir { add_name };
+allow system_app sysfs_motor:dir search;
+allow system_app sysfs_vibrator:dir search;
+

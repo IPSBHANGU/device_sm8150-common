@@ -1,0 +1,5 @@
+# Allow hal_one_camera_motor_default to read and write to sysfs_motor
+allow hal_one_camera_motor_default sysfs_motor:dir search;
+allow hal_one_camera_motor_default sysfs_motor:file rw_file_perms;
+allow system_app sysfs_motor:dir search;
+allow system_app sysfs_motor:file rw_file_perms;

@@ -1,3 +1,4 @@
+vendor.qti.hardware.fingerprint::IQtiExtendedFingerprint                   u:object_r:hal_fingerprint_hwservice:s0
 vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon    u:object_r:hal_fingerprint_hwservice:s0
 vendor.nxp.eventprocessor::INxpEseEvtProcessor                             u:object_r:hal_secure_element_hwservice:s0
