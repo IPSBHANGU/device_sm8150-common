@@ -28,7 +28,6 @@
 #
 
 # kevin@system, 2019/06/08, add carrier rc
-import /vendor/etc/init/hw/init.target.one.rc
 import /vendor/etc/init/hw/init.oem.carrier.rc
 
 on early-init
