@@ -172,6 +172,7 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     libbluetooth_qti \
     libbtconfigstore \
+    liba2dpoffload \
     libbthost_if \
     libldacBT_dec \
     libbt-logClient.so \
@@ -194,7 +195,14 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Common init scripts
+# Device Personalization Services
+PRODUCT_PACKAGES += \
+    MatchmakerPrebuilt
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/product/etc/permissions/privapp-permissions-matchmaker.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-matchmaker.xml
+
+# Init scripts
 PRODUCT_PACKAGES += \
     coredump.sh \
     ftm_power_config.sh \
