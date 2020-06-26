@@ -4,6 +4,7 @@ persist.vendor.audio.hac.enable=false
 ro.audio.monitorRotation=true
 audio.dolby.ds2.enabled=true
 audio.dolby.ds2.hardbypass=true
+persist.vendor.bt.a2dp.hal.implementation=true
 
 # Bluetooth
 bt.max.hfpclient.connections=1

@@ -28,3 +28,6 @@ allow hal_audio_default hal_audio_default:capability2 { block_suspend };
 allow hal_audio_default hal_dms_default:binder call;
 allow hal_audio_default unlabeled:dir search;
 allow hal_audio_default audio_prop:file map;
+
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, hal_dms_default)

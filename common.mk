@@ -9,6 +9,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
 
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/qcom/common/perf/perf-vendor.mk)
+
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_props.mk
 
@@ -178,6 +181,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    SnapdragonCamera \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
@@ -346,6 +350,10 @@ PRODUCT_PACKAGES += \
     libchrome \
     libchrome.vendor
 
+# OPScreenRecorder
+PRODUCT_PACKAGES += \
+    OPScreenRecord
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
@@ -407,6 +415,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     perf \
     wfd
+
+-include vendor/qcom/common/*/qti-*.mk
 
 # RCS
 PRODUCT_PACKAGES += \

@@ -24,4 +24,10 @@
     -->
     <integer name="config_fingerprintSensorLocation">1</integer>
 
+    <!-- Disable stock OTA components if installed -->
+    <string-array name="config_disabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.unstable</item>
+        <item>org.microg.gms.droidguard/com.google.android.gms.unstable</item>
+    </string-array>
+
 </resources>
