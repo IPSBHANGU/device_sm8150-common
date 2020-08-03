@@ -26,3 +26,8 @@ allow hal_camera_default mnt_vendor_file:dir r_dir_perms;
 
 # Sysfs
 allow hal_camera_default sysfs:file r_file_perms;
+
+# Allow Bluetooth Audio
+allow hal_camera_default bluetooth_a2dp_offload_prop:file { getattr map open };
+allow hal_camera_default bluetooth_audio_hal_prop:file { getattr map open };
+allow hal_camera_default bluetooth_prop:file { getattr map open };

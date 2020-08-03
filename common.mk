@@ -194,13 +194,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Device Personalization Services
-PRODUCT_PACKAGES += \
-    MatchmakerPrebuilt
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/product/etc/permissions/privapp-permissions-matchmaker.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-matchmaker.xml
-
 # Init scripts
 PRODUCT_PACKAGES += \
     coredump.sh \
@@ -262,7 +255,8 @@ PRODUCT_PACKAGES += \
 
 # Device
 PRODUCT_PACKAGES += \
-    OnePlusParts
+    OnePlusParts \
+    OneDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -357,8 +351,8 @@ PRODUCT_PACKAGES += \
     libchrome.vendor
 
 # OPScreenRecorder
-PRODUCT_PACKAGES += \
-    OPScreenRecord
+#PRODUCT_PACKAGES += \
+#    OPScreenRecord
 
 # Net
 PRODUCT_PACKAGES += \
@@ -399,12 +393,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
-
-# Prebuilts
-PRODUCT_PACKAGES += \
-    OnePlusCamera \
-    OnePlusGallery \
-    OnePlusCameraService
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem-system.xml:system/etc/permissions/privapp-permissions-oem-system.xml

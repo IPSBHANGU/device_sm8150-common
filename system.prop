@@ -24,7 +24,6 @@ persist.debug.coresight.config=stm-events
 persist.vendor.dpm.feature=9
 
 # Google
-ro.opa.eligible_device=true
 ro.build.release_type=release
 
 # GPS
@@ -86,7 +85,7 @@ ro.nfc.port=I2C
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 # Priv-app permissions whitelist
-ro.control_privapp_permissions=enforce
+ro.control_privapp_permissions=log
 
 # Radio
 DEVICE_PROVISIONED=1
@@ -115,3 +114,10 @@ persist.sys.usb.config=mtp,adb
 ro.adb.secure=0
 ro.secure=0
 ro.debuggable=1
+
+# PASR
+vendor.power.pasr.enabled=true
+
+# OnePlus sensors
+ro.sensor.pickup=oneplus.sensor.pickup
+ro.sensor.pocket=oneplus.sensor.op_motion_detect
