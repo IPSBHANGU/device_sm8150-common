@@ -27,7 +27,9 @@ cc_library {
     cflags: [
         "-Wall",
         "-Werror",
+        "-D_GENERIC_KERNEL_HEADERS",
         "-Wno-macro-redefined",
+	"-Wno-unused-parameter",
     ],
     srcs: [
         "gpt-utils.cpp",

@@ -12,6 +12,8 @@ $(call inherit-product-if-exists, vendor/oneplus/sm8150-common/sm8150-common-ven
 # Inherit packages from vendor/addons/oneplus/camera
 $(call inherit-product-if-exists, vendor/addons/oneplus/camera/config.mk)
 
+PRODUCT_VENDOR_MOVE_ENABLED := true
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -84,7 +86,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
-    $(LOCAL_PATH)/configs/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    vendor/one/config/permissions/vendor.one.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.one.biometrics.fingerprint.inscreen.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -178,7 +180,8 @@ PRODUCT_PACKAGES += \
 
 # Common init scripts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(LOCAL_PATH)/rootdir/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/init.qcom.usb.rc
 
 PRODUCT_PACKAGES += \
     coredump.sh \
@@ -238,8 +241,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0.vendor
 
 # Doze
-PRODUCT_PACKAGES += \
-    OnePlusDoze
+#PRODUCT_PACKAGES += \
+#    OnePlusDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -250,7 +253,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.oneplus_msmnile \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile \
+    vendor.one.biometrics.fingerprint.inscreen@1.0-service.oneplus_msmnile \
     vendor.oneplus.fingerprint.extension@1.0.vendor \
     vendor.oneplus.hardware.display@1.0.vendor
 
@@ -449,9 +452,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-ims.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-ims.xml
 
@@ -467,11 +467,11 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oneplus_msmnile
+    vendor.one.touch@1.0-service.oneplus_msmnile
 
 #AOSiP Device Settings
-PRODUCT_PACKAGES += \
-    DeviceSettings
+#PRODUCT_PACKAGES += \
+#    DeviceSettings
 
 # tri-state key
 PRODUCT_PACKAGES += \
